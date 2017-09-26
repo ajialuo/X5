@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns:p="http://www.springframework.org/schema/p"
+xmlns:context="http://www.springframework.org/schema/context"
+xmlns:aop="http://www.springframework.org/schema/aop" 
+xmlns:tx="http://www.springframework.org/schema/tx"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans.xsd
+   http://www.springframework.org/schema/context
+   http://www.springframework.org/schema/context/spring-context.xsd
+   http://www.springframework.org/schema/tx
+   http://www.springframework.org/schema/tx/spring-tx.xsd
+   http://www.springframework.org/schema/aop
+   http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+  <context:component-scan base-package="com.highdataX5.service" />
+  <context:component-scan base-package="com.highdataX5.dao" />
+  
+  <!-- 加载数据库连接的资源文件 -->
+  <context:property-placeholder location="classpath:jdbc.properties"/>
+  
+  <!-- 配置数据源 数据库连接池 -->
+  <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" 
+        init-method="init" destroy-method="close">
+    <property name="driverClassName" value="${jdbc.driver}"/>
+    <property name="url" value="${jdbc.url}"/>
+    <property name="username" value="${jdbc.username}"/>
+    <property name="password" value="${jdbc.password}"/>
+    <property name="initialSize" value="${jdbc.initialSize}"/>
+    <property name="maxActive" value="${jdbc.maxActive}"/>
+    <property name="minIdle" value="${jdbc.minIdle}"/>
+  </bean>
+  
+  <!-- 配置sqlSessionFactory -->
+  <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+    <!-- 数据库连接池 -->
+    <property name="dataSource" ref="dataSource"/>
+    <!--用于配置mapper映射xml-->
+    <property name="mapperLocations" value="classpath:com/highdataX5/mapper/*.xml"/>
+    <property name="typeAliasesPackage" value="com.highdataX5.entity"/>
+    <!-- 加载Mybatis全局配置文件 -->
+    <property name="configLocation" value="classpath:/SqlMapConfig.xml"/>
+
+  </bean>
+  
+  <!-- 配置mapper扫描器 -->
+  <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+    <!-- 扫描包路径，如果需要扫描多个包中间用半角逗号隔开 -->
+    <property name="basePackage" value="com.highdataX5.mapper"/>
+    <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
+  </bean>
+  
+  
+  <!--   事务控制使用JDBC控制类。 -->
+  <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+    <!-- 配置数据源 -->
+    <property name="dataSource" ref="dataSource"/>
+  </bean>
+  
+  <!-- 配置通知，事务控制 -->
+  <tx:advice id="txAdvice" transaction-manager="transactionManager">
+    <tx:attributes>
+      <!-- 传播行为 -->
+      <tx:method name="save*" propagation="REQUIRED"/>
+      <tx:method name="insert*" propagation="REQUIRED"/>
+      <tx:method name="update*" propagation="REQUIRED"/>
+      <tx:method name="delete*" propagation="REQUIRED"/>
+      <tx:method name="find*" propagation="SUPPORTS" read-only="true"/>
+      <tx:method name="select*" propagation="SUPPORTS" read-only="true"/>
+    </tx:attributes>
+  </tx:advice>
+  
+  <!-- 配置aop切面  -->
+  <aop:config>
+      <aop:advisor advice-ref="txAdvice" pointcut="execution(* com.highdataX5.service.impl.*.*(..))"/>
+  </aop:config>
+  
+</beans>
