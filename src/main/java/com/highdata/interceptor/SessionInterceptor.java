@@ -1,4 +1,4 @@
-package com.highdataX5.interceptor;
+package com.highdata.interceptor;
 
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
@@ -7,7 +7,7 @@ import javax.servlet.http.HttpSession;
 import org.apache.log4j.Logger;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
-import com.highdataX5.entity.User;
+import com.highdata.entity.User;
 
 public class SessionInterceptor implements HandlerInterceptor {
 

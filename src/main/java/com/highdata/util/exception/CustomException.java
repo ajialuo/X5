@@ -1,4 +1,4 @@
-package com.highdataX5.util.exception;
+package com.highdata.util.exception;
 
 public class CustomException extends Exception {
 

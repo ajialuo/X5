@@ -1,11 +1,11 @@
-package com.highdataX5;
+package com.x5;
 
 import java.util.List;
 import javax.servlet.ServletException;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import com.highdataX5.entity.User;
-import com.highdataX5.service.UserService;
+import com.highdata.entity.User;
+import com.highdata.service.UserService;
 
 
 public class UserTest extends BaseTest{

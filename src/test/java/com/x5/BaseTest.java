@@ -1,4 +1,4 @@
-package com.highdataX5;
+package com.x5;
 
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;

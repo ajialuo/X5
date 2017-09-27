@@ -1,4 +1,4 @@
-package com.highdataX5.mapper;
+package com.highdata.mapper;
 
 import java.util.List;
 import java.util.Map;

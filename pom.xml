@@ -1,11 +1,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <artifactId>highdataX5</artifactId>
-  <groupId>highdataX5</groupId>
+  <artifactId>x5</artifactId>
+  <groupId>x5</groupId>
   <version>0.0.1-SNAPSHOT</version>
 
-  <name>highdataX5</name>
+  <name>x5</name>
   <url>http://maven.apache.org</url>
 
   <properties>
@@ -217,7 +217,7 @@
   </dependencies>
   
   <build>
-        <finalName>xiaoali</finalName>
+        <finalName>x5</finalName>
         <plugins>
             <plugin>
               <groupId>org.apache.maven.plugins</groupId>

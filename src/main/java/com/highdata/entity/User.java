@@ -1,4 +1,4 @@
-package com.highdataX5.entity;
+package com.highdata.entity;
 
 import java.io.Serializable;
 import javax.persistence.Column;

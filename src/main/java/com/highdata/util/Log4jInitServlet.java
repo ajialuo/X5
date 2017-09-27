@@ -1,4 +1,4 @@
-package com.highdataX5.util;
+package com.highdata.util;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;

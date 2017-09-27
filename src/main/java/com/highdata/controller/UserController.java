@@ -1,4 +1,4 @@
-package com.highdataX5.controller;
+package com.highdata.controller;
 
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import com.highdataX5.entity.User;
-import com.highdataX5.service.UserService;
-import com.highdataX5.util.exception.CustomException;
+import com.highdata.entity.User;
+import com.highdata.service.UserService;
+import com.highdata.util.exception.CustomException;
 
 
 @Controller

@@ -25,7 +25,7 @@ xsi:schemaLocation="
   <!-- <mvc:resources location="/" mapping="/index.html" /> -->
   
   <!-- 扫描类包，将标注Spring注解的类自动转化Bean，同时完成Bean的注入 --> 
-  <context:component-scan base-package="com.highdataX5.controller" />
+  <context:component-scan base-package="com.highdata.controller" />
 
   
   <!--   视图解析器 -->
@@ -46,10 +46,10 @@ xsi:schemaLocation="
   <mvc:interceptors>
       <mvc:interceptor>
           <mvc:mapping path="/*" />
-          <bean class="com.highdataX5.interceptor.SessionInterceptor">
+          <bean class="com.highdata.interceptor.SessionInterceptor">
               <property name="excludedUrls">
                   <list>
-                      <value>/highdataX5/login</value>
+                      <value>/x5/login</value>
                   </list>
               </property>
           </bean>
@@ -57,7 +57,7 @@ xsi:schemaLocation="
   </mvc:interceptors>
   
   <!-- 自定义的全局异常处理器 只要实现HandlerExceptionResolver接口就是全局异常处理器-->
-  <bean class="com.highdataX5.util.exception.CustomExceptionResolver"></bean> 
+  <bean class="com.highdata.util.exception.CustomExceptionResolver"></bean> 
   
   
 </beans>

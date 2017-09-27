@@ -1,4 +1,4 @@
-package com.highdataX5.service;
+package com.highdata.service;
 
 import java.util.List;
 

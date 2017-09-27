@@ -1,7 +1,7 @@
-package com.highdataX5.service;
+package com.highdata.service;
 
 import java.util.List;
-import com.highdataX5.entity.User;
+import com.highdata.entity.User;
 
 public interface UserService extends BaseService{
 

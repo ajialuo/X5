@@ -1,4 +1,4 @@
-package com.highdataX5;
+package com.x5;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

@@ -27,7 +27,7 @@
   </servlet>
   <servlet>
     <servlet-name>log4j config file</servlet-name>
-    <servlet-class>com.highdataX5.util.Log4jInitServlet</servlet-class>
+    <servlet-class>com.highdata.util.Log4jInitServlet</servlet-class>
     <init-param>
       <param-name>configfile</param-name>
       <param-value>/WEB-INF/classes/log4j.properties</param-value>
@@ -37,6 +37,6 @@
   <servlet-mapping>
     <servlet-name>springmvc</servlet-name>
     <url-pattern>/</url-pattern>
-    <url-pattern>/highdataX5/login</url-pattern>
+    <url-pattern>/x5/login</url-pattern>
   </servlet-mapping>
 </web-app>

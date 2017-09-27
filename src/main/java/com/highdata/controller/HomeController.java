@@ -1,11 +1,11 @@
-package com.highdataX5.controller;
+package com.highdata.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
-import com.highdataX5.entity.User;
+import com.highdata.entity.User;
 
 @Controller
 public class HomeController {

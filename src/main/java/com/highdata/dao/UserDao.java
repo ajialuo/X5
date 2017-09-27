@@ -1,11 +1,11 @@
-package com.highdataX5.dao;
+package com.highdata.dao;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import com.github.abel533.entity.Example;
-import com.highdataX5.entity.User;
-import com.highdataX5.mapper.UserMapper;
+import com.highdata.entity.User;
+import com.highdata.mapper.UserMapper;
 
 @Repository
 public class UserDao{

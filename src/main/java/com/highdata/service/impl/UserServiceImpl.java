@@ -1,11 +1,11 @@
-package com.highdataX5.service.impl;
+package com.highdata.service.impl;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.highdataX5.dao.UserDao;
-import com.highdataX5.entity.User;
-import com.highdataX5.service.UserService;
+import com.highdata.dao.UserDao;
+import com.highdata.entity.User;
+import com.highdata.service.UserService;
 
 @Service
 public class UserServiceImpl
